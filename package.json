@@ -1,5 +1,5 @@
 {
-  "name": "noteTaker",
+  "name": "notetaker",
   "version": "1.0.0",
   "description": "HW Week 11 Express Note Taker",
   "main": "server.js",
@@ -17,5 +17,9 @@
   "bugs": {
     "url": "https://github.com/Angied521/noteTaker/issues"
   },
-  "homepage": "https://github.com/Angied521/noteTaker#readme"
+  "homepage": "https://github.com/Angied521/noteTaker#readme",
+  "devDependencies": {
+    "express": "^4.17.1",
+    "mysql": "^2.18.1"
+  }
 }
