@@ -1,7 +1,8 @@
-const express = require("express");
-const notes = require('./db.json')
+const express = require('express');
+const notes = require('./db.json');
+const fs = require('fs')
 
-const PORT = 5500;
+const PORT = process.env.PORT || 3000;
 
 const app = express();
 const path = require("path");
@@ -35,18 +36,6 @@ app.get('/api/notes', (req, res) => {
 });
 
 
-//router to save a unique id
-// app.delete("/api/notes/:id", (req, res) => {
-//     storage.removeNote(req.params.id)
-//     console.log(storage.removeNote(req.param.id))
-//     .then(() => res.json({
-//         ok: true
-
-//     }))
-//     .catch(error => {
-//         return res.status(500).json(error);
-//     })
-// });
 
 
 app.get("/api/noteTest", (req, res) => {
@@ -54,30 +43,32 @@ app.get("/api/noteTest", (req, res) => {
    
 });
 
-//posts notes to notes.html
-app.post('/api/notes', (req, res) => {
-    var newNote = req.body;
-    newNote.title = newNote.text.replace(/\s+/g, "").toLowerCase();
 
-  console.log(newNote);
+
+
+//posts notes to notes.html
+
+app.post('/api/notes/', (req, res) => {
+    let newNote = req.body;
+    newNote.title = newNote.title; 
+    
+    console.log(newNote);
 
   notes.push(newNote);
 
   res.json(newNote);
 })
-  
+
 app.delete('/api/notes/:id', (req, res) => {
-    
+    let deleteNote = id 
+    deletNote = note.id 
+    console.log(id);
+    notes.remove(id);
+    res.json(deleteNote);
+ 
+
 })
 
-
-//Delete api/notes by :id
-//read the note fron the db.json file 
-//remove by given id
-// rewrite the note to the db.json file
-app.delete("/api/notes/:id", (req, res) => {
-    res.send(note);
-});
 
 
 
