@@ -18,12 +18,8 @@
     "url": "https://github.com/Angied521/noteTaker/issues"
   },
   "homepage": "https://github.com/Angied521/noteTaker#readme",
-  "devDependencies": {
+  "dependencies": {
     "express": "^4.17.1",
-    "fs": "0.0.1-security",
-    "mysql": "^2.18.1",
-    "path": "^0.12.7",
-    "storage": "^0.2.0",
-    "uuidv1": "^1.6.14"
+    "path": "^0.12.7"
   }
 }
