@@ -59,16 +59,24 @@ app.post('/api/notes/', (req, res) => {
   res.json(newNote);
 })
 
-app.delete('/api/notes/:id', (req, res) => {
-    let deleteNote = id 
-    deletNote = note.id 
-    console.log(id);
-    notes.remove(id);
-    res.json(deleteNote);
- 
+function getId() {
+    let id = Math.floor(Math.random() * 100000);
+    return id;
+  }
 
+
+//to delete file
+app.delete('/api/notes/:id', async (req, res) => {
+    let deleteNote
+    try{
+        deleteNote = await notes.findbyID(req.params.id)
+        await book.remove()
+        res.redirect('/notes')
+
+    } catch {
+
+    }
 })
-
 
 
 
